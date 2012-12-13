@@ -4,7 +4,7 @@
 
 
 \subsubsection{LES}
-In this study, we employ a Large Eddy Simulation (LES) to model the fluid flow in the atmospheric and ocean boundary layers.  In an LES simulation a low pass spatial filter is applied to the incompressible Navier-Stokes equations so that the scales of turbulence responsible for transport and production of turbulent kinetic energy (TKE) are directly resolved, but smaller scales where viscous dissipation takes place are parameterized in a subfilter scale model (SFS) \cite{moeng_large-eddy-simulation_1984}.  The governing equations for our simulation include the Boussinesq approximation for buoyancy effects, Coriolis forces for a latitude of 45 deg north, and density-normalized forces representing our turbine actuator model.  The governing equations by the filtered continuity equation,
+In this study, we employ a Large Eddy Simulation (LES) to model the fluid flow in the atmospheric and ocean boundary layers.  In an LES simulation a low pass spatial filter is applied to the incompressible Navier-Stokes equations so that the scales of turbulence responsible for transport and production of turbulent kinetic energy (TKE) are directly resolved, but smaller scales where viscous dissipation takes place are parameterized in a subfilter scale model (SFS) \cite{moeng_large-eddy-simulation_1984}.  The governing equations for our simulation include the Boussinesq approximation for buoyancy effects, Coriolis forces for a latitude of 45 deg north, and density-normalized forces representing our turbine actuator model.  The governing equations are the filtered continuity equation,
 
 \begin{equation}
    \label{filtered_continuity}
@@ -16,7 +16,7 @@ and the filtered momentum equation,
 \begin{equation}
    \label{filtered_momentum}
    \frac{\partial \ubar_i}{\partial t} + \frac{\partial}{\partial x_j}\left(\ubar_j \ubar_i \right)
-   = - \frac{\partial \tilde{p}}{\partial x_i} - \frac{\partial \tau^D_{ij}}{\partial x_j} + F^T_i + F^A_i,
+   = -2\varepsilon_{ijk}\Omega_{j} \ubar_k -\frac{\partial \tilde{p}}{\partial x_i} - \frac{\partial \tau^D_{ij}}{\partial x_j} + F^T_i + F^A_i,
 \end{equation}
 
 where
@@ -25,9 +25,14 @@ where
    \label{eq:modified_pressure}
    \tilde{p} = \frac{\pbar + \tau_{kk}}{3 \rho}.
 \end{equation}
-%%%%!!
-% insert filtered continuity, momentum, and potential temp transport, boussinesq approximation, and coriolis force equations here
-%%%%!!
+
+and potential temperature transport
+
+\begin{equation}
+   \label{potential temp}
+   \frac{\partial \bar{\Theta}}{\partial t} + \frac{\partial}{\partial x_j}\left(\ubar_j \bar{\Theta} \right)
+   = - \frac{\partial}{\partial x_j}\left( q_j\right) 
+\end{equation}
 
 The SFS model used to parameterize viscous effects and is the standard Smagorinsky model.  This SFS model accounts for shear stress everywhere except at the lower boundary where a wall model is used.  The SFS model is applied at cell faces, which avoids interpolating to cell faces while taking the divergence of stress but provides a less dissipative effect near the lower boundary surface.  To model this, the shear stress equation is set to
 
@@ -48,23 +53,41 @@ The smagorinsky model defines $\nu$ as
    \nu^{SFS} = (C_s \Delta)^2(2\bar{S}_{ij}\bar{S}_{ij})^{1/2}
 \end{equation}
 
-where $C_s$ is the model constant set to 0.125 (check this for wind) and $\Delta$ is the filter length scale, which for SOWFA is set as $(\Delta x \Delta y \Delta z)^{1/3}$
-Spatial filter
-Boussinesq approximation
+where $C_s$ is the model constant set to 0.125 and $\Delta$ is the filter length scale, which for SOWFA is set as $(\Delta x \Delta y \Delta z)^{1/3}$
 
-Because of the sharp velocity gradients, complex surface roughness effects, and vortical structures that exist near the lower wall boundary, a wall model is applied at the lower boundary instead of directly resolving the flow with a no-slip condition.  This wall model accounts for the momentum and heat flux at the wall.  In this study we apply the wall model of Moeng 1984, which estimates a friction velocity based on supplied roughness heights and surface temperature flux using the Monin-Obukhov similarity theory.  This friction velocity then leads to the horizontally averaged shear stresses on the lower surface.  The relevant equations are as follows:
+Because of the sharp velocity gradients, complex surface roughness effects, and vortical structures that exist near the lower wall boundary, a wall model is applied at the lower boundary instead of directly resolving the flow with a no-slip condition.  This wall model accounts for the momentum and heat flux at the wall.  In this study we apply Moeng's wall model, which estimates a friction velocity based on supplied roughness heights and surface temperature flux using the Monin-Obukhov similarity theory \cite{moeng_large-eddy-simulation_1984}.  This friction velocity then leads to the horizontally averaged shear stresses on the lower surface.  The relevant equations for surface shear stress are 
 
-%%%%!!
-% insert Moeng 1984 wall model equations for momentum and temperature transport
-%%%%!!
+\begin{equation}
+   \label{wall model}
+   \tau^D_{ij}=\begin{bmatrix} 0 & 0 & \tau^tot_{13} \\ 0 & 0 & \tau^tot_{23} \\ \tau^tot_{13} & \tau^tot_{23} &0 \end{bmatrix}
+\end{equation}
 
+\begin{equation}
+   \label{tau13}
+   \tau^tot_{13}=
+-u^2_\ast\frac{S_{1/2}\langle \ubar_{1/2}\rangle+\langleS_{1/2}\rangle\left( \ubar_{1/2}-\langle\ubar_{1/2}\rangle\right) }
+{\langleS_{1/2}\rangle\left( \langle\ubar_{1/2}\rangle^2+\langle \vbar_{1/2}rangle^2\right)^{1/2} }
+\end{equation}
 
+\begin{equation}
+   \label{tau23}
+   \tau^tot_{23}=
+   -u^2_\ast\frac{S_{1/2}\langle \vbar_{1/2}\rangle+\langleS_{1/2}\rangle\left( \vbar_{1/2}-\langle\vbar_{1/2}\rangle\right) }
+   {\langleS_{1/2}\rangle\left( \langle\ubar_{1/2}\rangle^2+\langle \vbar_{1/2}rangle^2\right)^{1/2} }
+\end{equation}
+
+\begin{equation}
+   \label{friction velocity}
+   \u^2_\ast=\left( \langle\tau^tot_{13}\rangle^2+\langle \tau^tot_{23}\rangle^2\right)^{1/2}  
+\end{equation}
+
+Where $\u^2_\ast$ is the friction velocity, which can be calculated from the Obukhov length and aerodynamic roughness length.
 
 \subsubsection{Turbine Properties}
 
 The turbines modeled in our two simulation were not modeled as physical blades to which the fluid provided with rotational energy -- the computation power and modeling difficulty of such blades are beyond the scope of this paper. Instead, the turbines were modeled as a set of actuator lines which impose body forces on the incoming fluid flow. This model is described by Sorensen and Shen \cite{sorensen:393} and implimented in SOWFA \cite{SOWFA}.
 
-For the onshore wind turbine simulations we used the "NREL Offshore 5-MW Baseline Wind Turbine\cite{jonkman_definition_2009}, which is a representative utility scale multimegawatt wind turbine developed at NREL's National Wind Technology Center.  It is based on the REpower 5M wind turbine, with additional data from other publicly available sources so that the structural, aerodynamic, material, and control system properties are representative of a modern day wind turbine.  The wind turbine is three-bladed, upwind, variable speed, pitch controlled turbine with a 126 m rotor diameter, 90 m hub height, and high speed multi-stage gearbox.  Rated power for the turbine is 5.0 MW at 12.1 rpm.  Mass, stiffness, damping, and airfoil properties are given in NREL documentation\cite{jonkman_definition_2009}.
+For the onshore wind turbine simulations we used the "NREL Offshore 5-MW Baseline Wind Turbine\cite{jonkman_definition_2009}, which is a representative utility scale multimegawatt wind turbine developed at NREL's National Wind Technology Center.  It is based on the REpower 5M wind turbine, with additional data from other publicly available sources so that the structural, aerodynamic, material, and control system properties are representative of a modern day wind turbine.  The wind turbine is three-bladed, upwind, variable speed, pitch controlled turbine with a 126 m rotor diameter, 90 m hub height, and high speed multi-stage gearbox.  Rated power for the turbine is 5.0 MW at 12.1 rpm.  Mass, stiffness, damping, and airfoil properties are given in NREL documentation \cite{jonkman_definition_2009}.
 
 For the ocean current turbine simulation, a 1MW turbine was modeled (hereafter refered to as the OT1MW), with specs based upon the Voith 1 MW \cite{Voith}. The OT1MW was modeled with a 8 meter blade radius and 1.5m hub. The airfoils used on the OT1MW were a scaled down version of the airfoils used on the NREL5MW turbine as found in the SOWFA package \cite{SOWFA}, which is a poor approximation to the Voith 1MW turbine; future work will include a better representation of the 1MW turbine blade and generator properties. The OT1MW produced as expected, with the turbine reaching a steady state production of 0.85MW and steady rotation rate of 8 RPM at hub-height channel velocity of 1.9 m/s.
 
@@ -73,7 +96,7 @@ For the ocean current turbine simulation, a 1MW turbine was modeled (hereafter r
 \subsection{Numerics}
 
 
-The numerical package used in the simulations was OpenFOAM (Open Source Field Operation and Manipulation), which is a collection of C++ libraries for solving PDE's on unstructured meshes using the finite volume method \cite{OpenFOAM}. OpenFOAM is increasingly becoming the CFD package of choice for wind turbine simulations thanks to it?s open source and adaptable nature that has led to work done at the National Wind Technology Center and the University of Massachusetts Amherst \cite{}.  
+The numerical package used in the simulations was OpenFOAM (Open Source Field Operation and Manipulation), which is a collection of C++ libraries for solving PDE's on unstructured meshes using the finite volume method \cite{OpenFOAM}. OpenFOAM is increasingly becoming the CFD package of choice for wind turbine simulations thanks to it's open source and adaptable nature that has led to work done at the National Wind Technology Center, the University of Massachusetts Amherst and elsewhere.
 
 We employ the ABLPisoSolver developed as part of the NREL SOWFA (Simulator for Offshore Wind Farm Applications) toolset \cite{SOWFA} to solve our flow simulations.  ABLPisoSolver is based on the standard PISO algorithm that solves the momentum and pressure equations implicitly, but with the buoyancy, SFS stress, and (Coriolis, temperature, need to check the actual code on these as pdfs from Matt disagree) terms treated explicitly.  These explicit terms are solved sequentially using a Predictor-Corrector approach based on the previous timestep.  
 
@@ -82,21 +105,14 @@ We employ the ABLPisoSolver developed as part of the NREL SOWFA (Simulator for O
 
 \subsubsection{Mesh}
 
-The atmospheric boundary layer precursor simulation was performed on a domain of 3000 m in the x-direction, 3000 m in the y-direction, and 1000 m in the z direction.  The mesh for the precursor simulation was composed of 75x75x25 grid cells, giving a 40m resolution in each direction.  The mesh was then decomposed into 6 smaller domains for parallel processing in MPI (Message Passing Interface) using a Scotch decomposition method.  Finally, each decomposed domain was refined by a factor of two in all three coordinate directions, increasing the total number of cells eightfold to 1125000.  Additionally, the grid was refined three times around the actuator turbine during the actuator simulations.  As discussed later, this grid refinement leads to artifacts in the results  
+The atmospheric boundary layer precursor simulation was performed on a domain of 3000 m in the x-direction, 3000 m in the y-direction, and 1000 m in the z direction.  The mesh for the precursor simulation was composed of 75x75x25 grid cells, giving a 40m resolution in each direction.  The mesh was then decomposed into 6 smaller domains for parallel processing in MPI (Message Passing Interface) using a Scotch decomposition method.  Finally, each decomposed domain was refined by a factor of two in all three coordinate directions, increasing the total number of cells eightfold to 1125000.  Additionally, the grid was refined three times around the actuator turbine during the actuator simulations.  As discussed later, this grid refinement leads to artifacts in the results.
 
 For the ocean current turbine simulation, the precursor domain size was 200 meters in the x-direction, 200 meters in the y-direction and 70 meters in the z-direction. The initial mesh in the precursor was set at 45x45x20 and was refined once. Each cell in the precursor measured approximately 4x4x3 meters. Future work will study the impact of domain cell resolution in the precursor step.
 
-
-Domain size assumptions
-Grid cell size justification and differences between wind and water
-
 \subsubsection{Flow Conditions}
+To generate realistic turbulent structures, we took the approach of running a precursor simulation that allowed atmospheric or ocean boundary layers to fully develop.  Once the boundary layer was fully developed, we then inserted actuator line turbines into the simulation.  The initial conditions for the atmospheric simulations were a uniform geostrophic wind velocity from 225$^\circ$  at 9 $m/s$, with perturbations added near the surface to cause the turbulent flow field to quickly develop.  The ABL properties were specified such that the velocity at 90 m would be 9 $m/s$ and the driving pressure gradient was adjusted to maintain that velocity.  The aerodynamic surface roughness $Z_{0}$ was 0.016.  The temperature profile was constant at 300 K up to 750 m height where the temperature then increased to 308 K.  This creates a capping inversion that defines the boundary layer and slows the vertical growth of the boundary layer that has been a problem in previous simulations.  Surface temperature flux was set to 0 in the neutral ABL case and $0.04$ $mK/s$ in the unstable ABL case.
 
-Initial Conditions - ABL/OBL precursor simulation
-To generate realistic turbulent structures, we took the approach of running a precursor simulation that allowed atmospheric or ocean boundary layers to fully develop.  Once the boundary layer was fully developed, we then inserted actuator line turbines into the simulation.  The initial conditions for the atmospheric simulations were a uniform geostrophic wind velocity from 225$^\circ$  at $9 m/s$, with perturbations added near the surface to cause the turbulent flow field to quickly develop.  The ABL properties were specified such that the velocity at 90 m would be $9 m/s$ and the driving pressure gradient was adjusted to maintain that velocity.  The aerodynamic surface roughness $Z_{0}$ was 0.016.  The temperature profile was constant at 300 K up to 750 m height where the temperature then increased to 308 K.  This creates a capping inversion that defines the boundary layer and slows the vertical growth of the boundary layer that has been a problem in previous simulations.  Surface temperature flux was set to 0 in the neutral ABL case and $0.04$ $mK/s$ in the unstable ABL case.
-%
-Spencer to add ocean precursor IC's
-Maybe a quick image of the initial condition velocity/temp field?
+% %Spencer to add ocean precursor IC's
 
 The boundary conditions during the ABL precursor simulation on the top of the domain were: temperature gradient equal to that of the initial capping inversion, normal velocity  and parallel velocity gradient equal to zero, the normal pressure gradient from the momentum equation, and zero gradient of SFS viscosity.  On the bottom: prescribed temp flux, the normal pressure gradient from momentum equation, and normal velocity equal to zero, horizontal velocity from wall model (nonzero because OpenFOAM is a colocated code).  Lateral walls used periodic boundary conditions to generate turbulent structures, and small perturbations were introduced on the bottom of the domain to accelerate their development.
 
