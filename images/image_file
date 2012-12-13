@@ -115,3 +115,12 @@
 \end{figure}
 
 
+%% OceanMeshRefinement %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/OceanMeshRefinement}
+\caption{INSERT_CAPTION}
+\label{fig:OceanMeshRefinement}
+\end{figure}
+
+

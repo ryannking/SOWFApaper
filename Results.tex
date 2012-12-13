@@ -23,13 +23,39 @@ The OBL Precursor was run to 6000 seconds, which represents seven large-eddy tur
 
 The precursor simulations show realistic coherent turbulent structures that are crucial in generating realistic load distributions.  The different stability cases also exhibit realistic vertical mixing and shear profiles, with the unstable case showing a better mixed boundary layer.
 
-\subsection{ABL Actuator Line Results}
+\subsection{Actuator Line Results}
 After fully developing the atmospheric boundary layer in the absence of wind turbines, we insert a single actuator line turbine and run the simulation for another 250 seconds.  The results lead to several interesting insights.  First, there is nontrivial flow leakage at the root of the blades that persists for about two rotor diameters downstream.  This region where the blade airfoil properties are still discernable is the "near-wake" region\cite{sanderse_review_2011}.  Further downstream in the "far-wake" region the blade-specific effects have diffused into an amorphous wake, but the velocity deficit that is characteristic of the far-wake is present for eight to ten rotor diameters.  Figures XX show average velocity profiles and Figures XX show instantaneous velocity profiles at 250 seconds.  The instantaneous velocities also show horizontal and vertical meandering of the wake that is likely caused by instabilities in the boundary layer.
 
 \subsubsection{Numerical Artifacts}
-Interestingly, we also observe numerical artifacts in the CFD results located at the transition between grid refinement regions.  Figure XX shows the average velocity at hub height for the unstable ABL with the actual grid cells overlaid on the flow field.  Clearly, the artifacts are generated at the abrupt transition between adjacent refinement levels.  Conversations with the SOWFA creators, Matt Churchfield and Sang Lee, suggest that a spatial filter or mesh smoothing function could help alleviate these anomalies.
+Interestingly, we also observe numerical artifacts in the CFD results located at the transition between grid refinement regions.  Figure~\ref{fig:neutralWindPlantAvgVelPlanMeshRefine} shows the average velocity at hub height for the unstable ABL with the actual grid cells overlaid on the flow field.  Clearly, the artifacts are generated at the abrupt transition between adjacent refinement levels.   Confirming these results, the ocean turbine simulation, where the grid refinement was constant across the entire domain, did not show any signs of artifacts -- this is shown in Figure~\ref{fig:OceanMeshRefinement}. However, a single grid refinment level is not the ideal solution -- conversations with the SOWFA creators, Matt Churchfield and Sang Lee, suggest that a spatial filter or mesh smoothing function could help alleviate these anomalies.
+
+%% neutralWindPlantActuatorMeshRefinement %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/neutralWindPlantAvgVelPlanMeshRefine}
+\caption{Numerical artifacts present in the ABL wind turbine simulation}
+\label{fig:neutralWindPlantAvgVelPlanMeshRefine}
+\end{figure}
+
+%% OceanMeshRefinement %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/OceanMeshRefinement}
+\caption{Ocean wind turbine simulation without artifacts}
+\label{fig:OceanMeshRefinement}
+\end{figure}
 
 
 
-\subsection{OBL Results}
+\subsubsection{Vertical wake occilation}
 
+
+%% ocean-side-profile1 %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/ocean-side-profile1}
+\includegraphics[width=\textwidth]{images/ocean-side-profile2}
+\includegraphics[width=\textwidth]{images/ocean-side-profile3}
+\caption{Ocean turbine flow snapshots at t = 100s, 200s and 300s}
+\label{fig:ocean-side-profile1}
+\end{figure}
