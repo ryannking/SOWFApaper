@@ -6,39 +6,43 @@
 \subsubsection{LES}
 In this study, we employ a Large Eddy Simulation (LES) to model the fluid flow in the atmospheric and ocean boundary layers.  In an LES simulation a low pass spatial filter is applied to the incompressible Navier-Stokes equations so that the scales of turbulence responsible for transport and production of turbulent kinetic energy (TKE) are directly resolved, but smaller scales where viscous dissipation takes place are parameterized in a subfilter scale model (SFS).  The governing equations for our simulation include the Boussinesq approximation for buoyancy effects, Coriolis forces for a latitude of 45 deg north, and density-normalized forces representing our turbine actuator model.  The governing equations are as follows
 
-insert filtered continuity, momentum, and potential temp transport, boussinesq approximation, and coriolis force equations here
+%%%%!!
+% insert filtered continuity, momentum, and potential temp transport, boussinesq approximation, and coriolis force equations here
+%%%%!!
 
 The SFS model used to parameterize viscous effects and is the standard Smagorinsky model.  This SFS model accounts for shear stress everywhere except at the lower boundary where a wall model is used.  The SFS model is applied at cell faces, which avoids interpolating to cell faces while taking the divergence of stress but provides a less dissipative effect near the lower boundary surface.  
 
-insert Smagorinsky equations
+%%%%!!
+% insert Smagorinsky equations
+%%%%!!
 
-Wall Model
-Because of the sharp velocity gradients, complex surface roughness effects, and vortical structures that exist near the lower wall boundary, a wall model is applied at the lower boundary instead of directly resolving the flow with a no-slip condition.  This wall model accounts for the momentum and heat flux at the wall.  In this study we apply the wall model of Moeng 1984, which estimates a friction velocity based on supplied roughness heights and surface temperature flux using the Monin-Obukhov similarity theory.  This friction velocity then leads to the horizontally averaged shear stresses on the lower surface.  The relevant equations are as follows:
-insert Moeng 1984 wall model equations for momentum and temperature transport
-SFS model (Smagorinsky)
 Spatial filter
 Boussinesq approximation
 
+Because of the sharp velocity gradients, complex surface roughness effects, and vortical structures that exist near the lower wall boundary, a wall model is applied at the lower boundary instead of directly resolving the flow with a no-slip condition.  This wall model accounts for the momentum and heat flux at the wall.  In this study we apply the wall model of Moeng 1984, which estimates a friction velocity based on supplied roughness heights and surface temperature flux using the Monin-Obukhov similarity theory.  This friction velocity then leads to the horizontally averaged shear stresses on the lower surface.  The relevant equations are as follows:
+
+%%%%!!
+% insert Moeng 1984 wall model equations for momentum and temperature transport
+%%%%!!
+
+
+
 \subsubsection{Turbine Properties}
+
+The turbines modeled in our two simulation were not modeled as physical blades to which the fluid provided with rotational energy -- the computation power and modeling difficulty of such blades are beyond the scope of this paper. Instead, the turbines were modeled as a set of actuator lines which impose body forces on the incoming fluid flow. This model is described by Sorensen and Shen \cite{sorensen:393} and implimented in SOWFA \cite{SOWFA}.
+
 For the onshore wind turbine simulations we used the "NREL Offshore 5-MW Baseline Wind Turbine (Jonkman, et all, 2009), which is a representative utility scale multimegawatt wind turbine developed at NREL's National Wind Technology Center.  It is based on the REpower 5M wind turbine, with additional data from other publicly available sources so that the structural, aerodynamic, material, and control system properties are representative of a modern day wind turbine.  The wind turbine is three-bladed, upwind, variable speed, pitch controlled turbine with a 126 m rotor diameter, 90 m hub height, and high speed multi-stage gearbox.  Rated power for the turbine is 5.0 MW at 12.1 rpm.  Mass, stiffness, damping, and airfoil properties are given in reference XXX.
 
-For the ocean current turbine simulation, a 1MW turbine was modeled (hereafter refered to as the OT1MW), with specs based upon the Voith 1 MW \cite{Voith}. The OT1MW was modeled with a 8 meter blade radius and 1.5m hub. The airfoils used on the OT1MW were a scaled down version of the airfoils used on the NREL5MW turbine as found in the SOWFA package \cite{SOWFA}, which is a poor approximation to the Voith 1MW turbine; future work will include a better representation of the 1MW turbine blade and generator properties. The OT1MW produced as expected, with the turbine reaching a steady state production of 0.85MW and steady rotation rate of 8 RPM at hub-height channel velocity of 1.9 m/s. Figure~ shows a histogram of production during the 500 second simulation.
+For the ocean current turbine simulation, a 1MW turbine was modeled (hereafter refered to as the OT1MW), with specs based upon the Voith 1 MW \cite{Voith}. The OT1MW was modeled with a 8 meter blade radius and 1.5m hub. The airfoils used on the OT1MW were a scaled down version of the airfoils used on the NREL5MW turbine as found in the SOWFA package \cite{SOWFA}, which is a poor approximation to the Voith 1MW turbine; future work will include a better representation of the 1MW turbine blade and generator properties. The OT1MW produced as expected, with the turbine reaching a steady state production of 0.85MW and steady rotation rate of 8 RPM at hub-height channel velocity of 1.9 m/s.
 
-
-\subsubsection{Actuator Model}
-
-Line v. Disk
-Gaussian projection
-BEM
-Airfoil lookup tables
 
 
 \subsection{Numerics}
 
 
-The numerical package used in the simulations was OpenFOAM (Open Source Field Operation and Manipulation), which is a collection of C++ libraries for solving PDE?s on unstructured meshes using the finite volume method \cite{OpenFOAM}. OpenFOAM is increasingly becoming the CFD package of choice for wind turbine simulations thanks to it?s open source and adaptable nature that has led to work done at the National Wind Technology Center and the University of Massachusetts Amherst \cite{churchfield_wind_2010}.  
+The numerical package used in the simulations was OpenFOAM (Open Source Field Operation and Manipulation), which is a collection of C++ libraries for solving PDE?s on unstructured meshes using the finite volume method \cite{OpenFOAM}. OpenFOAM is increasingly becoming the CFD package of choice for wind turbine simulations thanks to it?s open source and adaptable nature that has led to work done at the National Wind Technology Center and the University of Massachusetts Amherst \cite{}.  
 
-We employ the ABLPisoSolver developed as part of the NREL SOWFA (Simulator for Offshore Wind Farm Applications) toolset (cite Matt and Sang) to solve our flow simulations.  ABLPisoSolver is based on the standard PISO algorithm that solves the momentum and pressure equations implicitly, but with the buoyancy, SFS stress, and (Coriolis, temperature, need to check the actual code on these as pdfs from Matt disagree) terms treated explicitly.  These explicit terms are solved sequentially using a Predictor-Corrector approach based on the previous timestep.  
+We employ the ABLPisoSolver developed as part of the NREL SOWFA (Simulator for Offshore Wind Farm Applications) toolset \cite{Matt and Sang} to solve our flow simulations.  ABLPisoSolver is based on the standard PISO algorithm that solves the momentum and pressure equations implicitly, but with the buoyancy, SFS stress, and (Coriolis, temperature, need to check the actual code on these as pdfs from Matt disagree) terms treated explicitly.  These explicit terms are solved sequentially using a Predictor-Corrector approach based on the previous timestep.  
 
 \subsection{Simulation}
 
@@ -53,7 +57,7 @@ For the ocean current turbine simulation, the precursor domain size was 200 mete
 Domain size assumptions
 Grid cell size justification and differences between wind and water
 
-\paragraph{Flow Conditions}
+\subsubsection{Flow Conditions}
 
 Initial Conditions - ABL/OBL precursor simulation
 To generate realistic turbulent structures, we took the approach of running a precursor simulation that allowed atmospheric or ocean boundary layers to fully develop.  Once the boundary layer was fully developed, we then inserted actuator line turbines into the simulation.  The initial conditions for the atmospheric simulations were a uniform geostrophic wind velocity from 225$^\circ$  at $9 m/s$, with perturbations added near the surface to cause the turbulent flow field to quickly develop.  The ABL properties were specified such that the velocity at 90 m would be $9 m/s$ and the driving pressure gradient was adjusted to maintain that velocity.  The aerodynamic surface roughness $Z_{0}$ was 0.016.  The temperature profile was constant at 300 K up to 750 m height where the temperature then increased to 308 K.  This creates a capping inversion that defines the boundary layer and slows the vertical growth of the boundary layer that has been a problem in previous simulations (maybe cite Matt Smith here?).  Periodic lateral boundary conditions were used to help develop coherent turbulent structures.  Surface temperature flux was set to 0 in the neutral ABL case and $0.04$ $mK/s$ in the unstable ABL case.
@@ -65,10 +69,3 @@ Inlet conditions
 Boundary Conditions
 top: temp gradient that of the initial capping inversion, normal velocity zero and velocity gradient parallel is zero, pressure gradient from momentum equation normal to boundary, gradient of SFS viscosity is zero
 bottom: prescribed temp flux, pressure gradient from momentum equation normal to boundary, normal velocity zero, horizontal velocity from wall model (nonzero because OpenFOAM is a colocated code)
-
-\paragraph{Actuator Implementation}
-
-General Methodology
-Comparison of line and disk
-Substantial Differences between Wind and Water
-
