@@ -1,5 +1,6 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: SOWFApaper.aux
-The style file: alpha.bst
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: SOWFApaper.aux
+The style file: abbrv.bst
 Database file #1: ref.bib
 Warning--entry type for "OpenFOAM" isn't style-file defined
 --line 183 of file ref.bib
@@ -11,7 +12,49 @@ Warning--to sort, need author or key in SOWFA
 Warning--to sort, need author or key in OpenFOAM
 Warning--to sort, need author or key in Voith
 Warning--empty booktitle in churchfield_large-eddy_2012
+Warning--empty booktitle in churchfield_large-eddy_2011
 Warning--empty institution in jonkman_definition_2009
 Warning--empty booktitle in kelley_impact_2005
 Warning--empty booktitle in lee_atmospheric_2011
-(There were 10 warnings)
+You've used 19 entries,
+            2118 wiz_defined-function locations,
+            592 strings with 6826 characters,
+and the built_in function-call counts, 5998 in all, are:
+= -- 554
+> -- 310
+< -- 1
++ -- 126
+- -- 104
+* -- 462
+:= -- 992
+add.period$ -- 51
+call.type$ -- 19
+change.case$ -- 110
+chr.to.int$ -- 0
+cite$ -- 27
+duplicate$ -- 208
+empty$ -- 478
+format.name$ -- 104
+if$ -- 1226
+int.to.chr$ -- 0
+int.to.str$ -- 19
+missing$ -- 15
+newline$ -- 92
+num.names$ -- 32
+pop$ -- 130
+preamble$ -- 1
+purify$ -- 90
+quote$ -- 0
+skip$ -- 146
+stack$ -- 0
+substring$ -- 337
+swap$ -- 25
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 76
+warning$ -- 8
+while$ -- 47
+width$ -- 21
+write$ -- 186
+(There were 11 warnings)

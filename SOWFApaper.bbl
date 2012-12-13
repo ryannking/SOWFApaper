@@ -1,104 +1,110 @@
-\newcommand{\etalchar}[1]{$^{#1}$}
-\begin{thebibliography}{PAWLC11}
+\begin{thebibliography}{10}
 
-\bibitem[CLM{\etalchar{+}}12]{churchfield_large-eddy_2012}
-M.~J Churchfield, S.~Lee, P.~J Moriarty, L.~A Martinez, S.~Leonardi,
-  G.~Vijayakumar, and J.~G Brasseur.
-\newblock A large-eddy simulation of wind-plant aerodynamics: Preprint.
-\newblock January 2012.
+\bibitem{OpenFOAM}
+Openfoam - the open source computational fluid dynamics (cfd) toolbox, Dec.
+  2012.
 
-\bibitem[CLMM12]{churchfield_numerical_2012}
-Matthew~J. Churchfield, Sang Lee, John Michalakes, and Patrick~J. Moriarty.
+\bibitem{SOWFA}
+Sowfa - simulator for offshore wind farm applications, Dec. 2012.
+
+\bibitem{Voith}
+Voith - tidal current power stations, Dec. 2012.
+
+\bibitem{calaf_large_2010}
+M.~Calaf, C.~Meneveau, and J.~Meyers.
+\newblock Large eddy simulation study of fully developed wind-turbine array
+  boundary layers.
+\newblock {\em Physics of Fluids}, 22:015110--015110--16, Jan. 2010.
+
+\bibitem{churchfield_numerical_2012}
+M.~J. Churchfield, S.~Lee, J.~Michalakes, and P.~J. Moriarty.
 \newblock A numerical study of the effects of atmospheric and wake turbulence
   on wind turbine dynamics.
 \newblock {\em Journal of Turbulence}, page N14, 2012.
 
-\bibitem[CMM10]{calaf_large_2010}
-Marc Calaf, Charles Meneveau, and Johan Meyers.
-\newblock Large eddy simulation study of fully developed wind-turbine array
-  boundary layers.
-\newblock {\em Physics of Fluids}, 22:015110--015110--16, January 2010.
+\bibitem{churchfield_large-eddy_2012}
+M.~J. Churchfield, S.~Lee, P.~J. Moriarty, L.~A. Martinez, S.~Leonardi,
+  G.~Vijayakumar, and J.~G. Brasseur.
+\newblock A large-eddy simulation of wind-plant aerodynamics: Preprint.
+\newblock Jan. 2012.
 
-\bibitem[JBMS09]{jonkman_definition_2009}
+\bibitem{churchfield_large-eddy_2011}
+M.~J. Churchfield, Y.~Li, and P.~J. Moriarty.
+\newblock Large-eddy simulation study of wake propagation and power production
+  in an array of tidal-current turbines: Preprint.
+\newblock July 2011.
+
+\bibitem{jonkman_definition_2009}
 J.~Jonkman, S.~Butterfield, W.~Musial, and G.~Scott.
 \newblock Definition of a 5-{MW} reference wind turbine for offshore system
   development.
-\newblock Technical report, February 2009.
+\newblock Technical report, Feb. 2009.
 
-\bibitem[KJS{\etalchar{+}}05]{kelley_impact_2005}
-N.~D Kelley, B.~J Jonkman, G.~N Scott, J.~T Bialasiewicz, and L.~S Redmond.
+\bibitem{kelley_impact_2005}
+N.~D. Kelley, B.~J. Jonkman, G.~N. Scott, J.~T. Bialasiewicz, and L.~S.
+  Redmond.
 \newblock Impact of coherent turbulence on wind turbine aeroelastic response
   and its simulation: Preprint.
-\newblock August 2005.
+\newblock Aug. 2005.
 
-\bibitem[LCM{\etalchar{+}}11]{lee_atmospheric_2011}
+\bibitem{lee_atmospheric_2011}
 S.~Lee, M.~Churchfield, P.~Moriarty, J.~Jonkman, and J.~Michalakes.
 \newblock Atmospheric and wake turbulence impacts on wind turbine fatigue
   loading: Preprint.
-\newblock December 2011.
+\newblock Dec. 2011.
 
-\bibitem[LPA11]{lu_large-eddy_2011}
-Hao Lu and Fernando Porté-Agel.
+\bibitem{lu_large-eddy_2011}
+H.~Lu and F.~Porté-Agel.
 \newblock Large-eddy simulation of a very large wind farm in a stable
   atmospheric boundary layer.
 \newblock {\em Physics of Fluids}, 23(6):065101, 2011.
 
-\bibitem[Moe84]{moeng_large-eddy-simulation_1984}
-Chin-Hoh Moeng.
+\bibitem{moeng_large-eddy-simulation_1984}
+C.-H. Moeng.
 \newblock A large-eddy-simulation model for the study of planetary
   boundary-layer turbulence.
 \newblock {\em Journal of the Atmospheric Sciences}, 41(13):2052--2062, July
   1984.
 
-\bibitem[Ope12]{OpenFOAM}
-Openfoam - the open source computational fluid dynamics (cfd) toolbox, December
-  2012.
-
-\bibitem[PAWLC11]{porte-agel_large-eddy_2011}
-Fernando Porté-Agel, Yu-Ting Wu, Hao Lu, and Robert~J. Conzemius.
+\bibitem{porte-agel_large-eddy_2011}
+F.~Porté-Agel, Y.-T. Wu, H.~Lu, and R.~J. Conzemius.
 \newblock Large-eddy simulation of atmospheric boundary layer flow through wind
   turbines and wind farms.
 \newblock {\em Journal of Wind Engineering and Industrial Aerodynamics},
-  99(4):154--168, April 2011.
+  99(4):154--168, Apr. 2011.
 
-\bibitem[SOW12]{SOWFA}
-Sowfa - simulator for offshore wind farm applications, December 2012.
-
-\bibitem[SPK11]{sanderse_review_2011}
-B.~Sanderse, {S.P.} Pijl, and B.~Koren.
+\bibitem{sanderse_review_2011}
+B.~Sanderse, S.~Pijl, and B.~Koren.
 \newblock Review of computational fluid dynamics for wind turbine wake
   aerodynamics.
-\newblock {\em Wind Energy}, 14(7):799--819, October 2011.
+\newblock {\em Wind Energy}, 14(7):799--819, Oct. 2011.
 
-\bibitem[SS02]{sorensen:393}
-Jens~Norkaer Sorensen and Wen~Zhong Shen.
+\bibitem{sorensen:393}
+J.~N. Sorensen and W.~Z. Shen.
 \newblock Numerical modeling of wind turbine wakes.
 \newblock {\em Journal of Fluids Engineering}, 124(2):393--399, 2002.
 
-\bibitem[TSM07]{troldborg_actuator_2007}
-Niels Troldborg, Jens~N Sørensen, and Robert Mikkelsen.
+\bibitem{troldborg_actuator_2007}
+N.~Troldborg, J.~N. Sørensen, and R.~Mikkelsen.
 \newblock Actuator line simulation of wake of wind turbine operating in
   turbulent inflow.
 \newblock {\em Journal of Physics: Conference Series}, 75:012063, July 2007.
 
-\bibitem[Voi12]{Voith}
-Voith - tidal current power stations, December 2012.
-
-\bibitem[WL11]{wharton_assessing_2011}
-Sonia Wharton and Julie~K Lundquist.
+\bibitem{wharton_assessing_2011}
+S.~Wharton and J.~K. Lundquist.
 \newblock Assessing atmospheric stability and its impacts on rotordisk wind
   characteristics at an onshore wind farm.
 \newblock {\em Wind Energy}, July 2011.
 
-\bibitem[WL12]{wharton_atmospheric_2012}
-Sonia Wharton and Julie~K Lundquist.
+\bibitem{wharton_atmospheric_2012}
+S.~Wharton and J.~K. Lundquist.
 \newblock Atmospheric stability affects wind turbine power collection.
-\newblock {\em Environmental Research Letters}, 7(1):014005, March 2012.
+\newblock {\em Environmental Research Letters}, 7(1):014005, Mar. 2012.
 
-\bibitem[WPA10]{wu_large-eddy_2010}
-Yu-Ting Wu and Fernando Porté-Agel.
+\bibitem{wu_large-eddy_2010}
+Y.-T. Wu and F.~Porté-Agel.
 \newblock Large-eddy simulation of wind-turbine wakes: Evaluation of turbine
   parametrisations.
-\newblock {\em Boundary-Layer Meteorology}, 138(3):345--366, December 2010.
+\newblock {\em Boundary-Layer Meteorology}, 138(3):345--366, Dec. 2010.
 
 \end{thebibliography}
