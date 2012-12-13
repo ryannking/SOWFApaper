@@ -4,8 +4,8 @@ for file in `ls *.png`
 do
    newname=`echo $file | sed 's/\.png$//g'`
 
-   #./png2eps.sh $file > ${newname}.eps
-   #epstopdf ${newname}.eps
+   ./png2eps.sh $file > ${newname}.eps
+   epstopdf ${newname}.eps
 
    echo %% ${newname} %% >> image_file
    echo '\begin{figure}' >> image_file
