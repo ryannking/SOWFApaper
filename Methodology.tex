@@ -4,7 +4,7 @@
 
 
 \subsubsection{LES}
-In this study, we employ a Large Eddy Simulation (LES) to model the fluid flow in the atmospheric and ocean boundary layers.  In an LES simulation a low pass spatial filter is applied to the incompressible Navier-Stokes equations so that the scales of turbulence responsible for transport and production of turbulent kinetic energy (TKE) are directly resolved, but smaller scales where viscous dissipation takes place are parameterized in a subfilter scale model (SFS) \cite{moeng_large-eddy-simulation_1984}.  The governing equations for our simulation include the Boussinesq approximation for buoyancy effects, Coriolis forces for a latitude of 45 deg north, and density-normalized forces representing our turbine actuator model.  The governing equations are the filtered continuity equation,
+In this study, we employ a Large Eddy Simulation (LES) to model the fluid flow in the atmospheric and ocean boundary layers.  In an LES simulation a low pass spatial filter is applied to the incompressible Navier-Stokes equations so that the scales of turbulence responsible for transport and production of turbulent kinetic energy (TKE) are directly resolved, but smaller scales where viscous dissipation takes place are parameterized in a subfilter scale model (SFS) \cite{moeng_large-eddy-simulation_1984}.  The governing equations for our simulation include the Boussinesq approximation for buoyancy effects, Coriolis forces for a latitude of 45 deg north, driving pressure force, and density-normalized forces representing our turbine actuator model.  The governing equations are the filtered continuity equation,
 
 \begin{equation}
    \label{filtered_continuity}
@@ -15,8 +15,14 @@ and the filtered momentum equation,
 
 \begin{equation}
    \label{filtered_momentum}
-   \frac{\partial \ubar_i}{\partial t} + \frac{\partial}{\partial x_j}\left(\ubar_j \ubar_i \right)
-   = -2\varepsilon_{ijk}\Omega_{j} \ubar_k -\frac{\partial \tilde{p}}{\partial x_i} - \frac{\partial \tau^D_{ij}}{\partial x_j} + F^T_i
+   \frac{\partial \ubar_i}{\partial t} 
+   + \frac{\partial}{\partial x_j}\left(\ubar_j \ubar_i \right)
+   = -2\varepsilon_{i3k}\Omega_{3} \ubar_k 
+   - \frac{\partial \tilde{p}}{\partial x_i} 
+   - \frac{1}{\rho_0} \frac{\partial p_0}{\partial x_i}
+   - \frac{\partial \tau^D_{ij}}{\partial x_j} 
+   + g \left( \frac{\bar{\theta} - \theta_0}{\theta_0} \right)
+   + \frac{1}{\rho_0}F^T_i
 \end{equation}
 
 where
