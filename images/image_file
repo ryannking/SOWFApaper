@@ -1,0 +1,585 @@
+%% neutralABLPrecursorTemp %%
+\begin{figure}
+\centering
+includegraphics[width=textwidth]{neutralABLPrecursorTemp}
+\caption{}
+label{fig:neutralABLPrecursorTemp}
+\end{figure}
+
+
+%% neutralABLPrecursorVelocityMesh %%
+\begin{figure}
+\centering
+includegraphics[width=textwidth]{neutralABLPrecursorVelocityMesh}
+\caption{}
+label{fig:neutralABLPrecursorVelocityMesh}
+\end{figure}
+
+
+%% neutralABLPrecursorVelocity %%
+\begin{figure}
+\centering
+includegraphics[width=textwidth]{neutralABLPrecursorVelocity}
+\caption{}
+label{fig:neutralABLPrecursorVelocity}
+\end{figure}
+
+
+%% neutralWindPlant250sVelPlan %%
+\begin{figure}
+\centering
+includegraphics[width=textwidth]{neutralWindPlant250sVelPlan}
+\caption{}
+label{fig:neutralWindPlant250sVelPlan}
+\end{figure}
+
+
+%% neutralWindPlantActuatorMeshRefinement %%
+\begin{figure}
+\centering
+includegraphics[width=textwidth]{neutralWindPlantActuatorMeshRefinement}
+\caption{}
+label{fig:neutralWindPlantActuatorMeshRefinement}
+\end{figure}
+
+
+%% neutralWindPlantAvgVelocityProfile %%
+\begin{figure}
+\centering
+includegraphics[width=textwidth]{neutralWindPlantAvgVelocityProfile}
+\caption{}
+label{fig:neutralWindPlantAvgVelocityProfile}
+\end{figure}
+
+
+%% neutralWindPlantAvgVelPlanMeshRefine %%
+\begin{figure}
+\centering
+includegraphics[width=textwidth]{neutralWindPlantAvgVelPlanMeshRefine}
+\caption{}
+label{fig:neutralWindPlantAvgVelPlanMeshRefine}
+\end{figure}
+
+
+%% neutralWindPlantAvgVelPlan %%
+\begin{figure}
+\centering
+includegraphics[width=textwidth]{neutralWindPlantAvgVelPlan}
+\caption{}
+label{fig:neutralWindPlantAvgVelPlan}
+\end{figure}
+
+
+%% neutralWindPlantVelocityProfile %%
+\begin{figure}
+\centering
+includegraphics[width=textwidth]{neutralWindPlantVelocityProfile}
+\caption{}
+label{fig:neutralWindPlantVelocityProfile}
+\end{figure}
+
+
+%% ocean-side-profile1 %%
+\begin{figure}
+\centering
+includegraphics[width=textwidth]{ocean-side-profile1}
+\caption{}
+label{fig:ocean-side-profile1}
+\end{figure}
+
+
+%% ocean-side-profile2 %%
+\begin{figure}
+\centering
+includegraphics[width=textwidth]{ocean-side-profile2}
+\caption{}
+label{fig:ocean-side-profile2}
+\end{figure}
+
+
+%% ocean-side-profile3 %%
+\begin{figure}
+\centering
+includegraphics[width=textwidth]{ocean-side-profile3}
+\caption{}
+label{fig:ocean-side-profile3}
+\end{figure}
+
+
+%% ocean-vertical-speed-profile %%
+\begin{figure}
+\centering
+includegraphics[width=textwidth]{ocean-vertical-speed-profile}
+\caption{}
+label{fig:ocean-vertical-speed-profile}
+\end{figure}
+
+
+%% neutralABLPrecursorTemp %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{neutralABLPrecursorTemp}
+\caption{}
+\label{fig:neutralABLPrecursorTemp}
+\end{figure}
+
+
+%% neutralABLPrecursorVelocityMesh %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{neutralABLPrecursorVelocityMesh}
+\caption{}
+\label{fig:neutralABLPrecursorVelocityMesh}
+\end{figure}
+
+
+%% neutralABLPrecursorVelocity %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{neutralABLPrecursorVelocity}
+\caption{}
+\label{fig:neutralABLPrecursorVelocity}
+\end{figure}
+
+
+%% neutralWindPlant250sVelPlan %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{neutralWindPlant250sVelPlan}
+\caption{}
+\label{fig:neutralWindPlant250sVelPlan}
+\end{figure}
+
+
+%% neutralWindPlantActuatorMeshRefinement %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{neutralWindPlantActuatorMeshRefinement}
+\caption{}
+\label{fig:neutralWindPlantActuatorMeshRefinement}
+\end{figure}
+
+
+%% neutralWindPlantAvgVelocityProfile %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{neutralWindPlantAvgVelocityProfile}
+\caption{}
+\label{fig:neutralWindPlantAvgVelocityProfile}
+\end{figure}
+
+
+%% neutralWindPlantAvgVelPlanMeshRefine %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{neutralWindPlantAvgVelPlanMeshRefine}
+\caption{}
+\label{fig:neutralWindPlantAvgVelPlanMeshRefine}
+\end{figure}
+
+
+%% neutralWindPlantAvgVelPlan %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{neutralWindPlantAvgVelPlan}
+\caption{}
+\label{fig:neutralWindPlantAvgVelPlan}
+\end{figure}
+
+
+%% neutralWindPlantVelocityProfile %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{neutralWindPlantVelocityProfile}
+\caption{}
+\label{fig:neutralWindPlantVelocityProfile}
+\end{figure}
+
+
+%% ocean-side-profile1 %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{ocean-side-profile1}
+\caption{}
+\label{fig:ocean-side-profile1}
+\end{figure}
+
+
+%% ocean-side-profile2 %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{ocean-side-profile2}
+\caption{}
+\label{fig:ocean-side-profile2}
+\end{figure}
+
+
+%% ocean-side-profile3 %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{ocean-side-profile3}
+\caption{}
+\label{fig:ocean-side-profile3}
+\end{figure}
+
+
+%% ocean-vertical-speed-profile %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{ocean-vertical-speed-profile}
+\caption{}
+\label{fig:ocean-vertical-speed-profile}
+\end{figure}
+
+
+%% neutralABLPrecursorTemp %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/neutralABLPrecursorTemp}
+\caption{}
+\label{fig:neutralABLPrecursorTemp}
+\end{figure}
+
+
+%% neutralABLPrecursorVelocityMesh %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/neutralABLPrecursorVelocityMesh}
+\caption{}
+\label{fig:neutralABLPrecursorVelocityMesh}
+\end{figure}
+
+
+%% neutralABLPrecursorVelocity %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/neutralABLPrecursorVelocity}
+\caption{}
+\label{fig:neutralABLPrecursorVelocity}
+\end{figure}
+
+
+%% neutralWindPlant250sVelPlan %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/neutralWindPlant250sVelPlan}
+\caption{}
+\label{fig:neutralWindPlant250sVelPlan}
+\end{figure}
+
+
+%% neutralWindPlantActuatorMeshRefinement %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/neutralWindPlantActuatorMeshRefinement}
+\caption{}
+\label{fig:neutralWindPlantActuatorMeshRefinement}
+\end{figure}
+
+
+%% neutralWindPlantAvgVelocityProfile %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/neutralWindPlantAvgVelocityProfile}
+\caption{}
+\label{fig:neutralWindPlantAvgVelocityProfile}
+\end{figure}
+
+
+%% neutralWindPlantAvgVelPlanMeshRefine %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/neutralWindPlantAvgVelPlanMeshRefine}
+\caption{}
+\label{fig:neutralWindPlantAvgVelPlanMeshRefine}
+\end{figure}
+
+
+%% neutralWindPlantAvgVelPlan %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/neutralWindPlantAvgVelPlan}
+\caption{}
+\label{fig:neutralWindPlantAvgVelPlan}
+\end{figure}
+
+
+%% neutralWindPlantVelocityProfile %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/neutralWindPlantVelocityProfile}
+\caption{}
+\label{fig:neutralWindPlantVelocityProfile}
+\end{figure}
+
+
+%% ocean-side-profile1 %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/ocean-side-profile1}
+\caption{}
+\label{fig:ocean-side-profile1}
+\end{figure}
+
+
+%% ocean-side-profile2 %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/ocean-side-profile2}
+\caption{}
+\label{fig:ocean-side-profile2}
+\end{figure}
+
+
+%% ocean-side-profile3 %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/ocean-side-profile3}
+\caption{}
+\label{fig:ocean-side-profile3}
+\end{figure}
+
+
+%% ocean-vertical-speed-profile %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/ocean-vertical-speed-profile}
+\caption{}
+\label{fig:ocean-vertical-speed-profile}
+\end{figure}
+
+
+%% neutralABLPrecursorTemp %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/neutralABLPrecursorTemp}
+\caption{}
+\label{fig:neutralABLPrecursorTemp}
+\end{figure}
+
+
+%% neutralABLPrecursorVelocityMesh %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/neutralABLPrecursorVelocityMesh}
+\caption{}
+\label{fig:neutralABLPrecursorVelocityMesh}
+\end{figure}
+
+
+%% neutralABLPrecursorVelocity %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/neutralABLPrecursorVelocity}
+\caption{}
+\label{fig:neutralABLPrecursorVelocity}
+\end{figure}
+
+
+%% neutralWindPlant250sVelPlan %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/neutralWindPlant250sVelPlan}
+\caption{}
+\label{fig:neutralWindPlant250sVelPlan}
+\end{figure}
+
+
+%% neutralWindPlantActuatorMeshRefinement %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/neutralWindPlantActuatorMeshRefinement}
+\caption{}
+\label{fig:neutralWindPlantActuatorMeshRefinement}
+\end{figure}
+
+
+%% neutralWindPlantAvgVelocityProfile %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/neutralWindPlantAvgVelocityProfile}
+\caption{}
+\label{fig:neutralWindPlantAvgVelocityProfile}
+\end{figure}
+
+
+%% neutralWindPlantAvgVelPlanMeshRefine %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/neutralWindPlantAvgVelPlanMeshRefine}
+\caption{}
+\label{fig:neutralWindPlantAvgVelPlanMeshRefine}
+\end{figure}
+
+
+%% neutralWindPlantAvgVelPlan %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/neutralWindPlantAvgVelPlan}
+\caption{}
+\label{fig:neutralWindPlantAvgVelPlan}
+\end{figure}
+
+
+%% neutralWindPlantVelocityProfile %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/neutralWindPlantVelocityProfile}
+\caption{}
+\label{fig:neutralWindPlantVelocityProfile}
+\end{figure}
+
+
+%% ocean-side-profile1 %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/ocean-side-profile1}
+\caption{}
+\label{fig:ocean-side-profile1}
+\end{figure}
+
+
+%% ocean-side-profile2 %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/ocean-side-profile2}
+\caption{}
+\label{fig:ocean-side-profile2}
+\end{figure}
+
+
+%% ocean-side-profile3 %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/ocean-side-profile3}
+\caption{}
+\label{fig:ocean-side-profile3}
+\end{figure}
+
+
+%% ocean-vertical-speed-profile %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/ocean-vertical-speed-profile}
+\caption{}
+\label{fig:ocean-vertical-speed-profile}
+\end{figure}
+
+
+%% neutralABLPrecursorTemp %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/neutralABLPrecursorTemp}
+\caption{INSERT_CAPTION}
+\label{fig:neutralABLPrecursorTemp}
+\end{figure}
+
+
+%% neutralABLPrecursorVelocityMesh %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/neutralABLPrecursorVelocityMesh}
+\caption{INSERT_CAPTION}
+\label{fig:neutralABLPrecursorVelocityMesh}
+\end{figure}
+
+
+%% neutralABLPrecursorVelocity %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/neutralABLPrecursorVelocity}
+\caption{INSERT_CAPTION}
+\label{fig:neutralABLPrecursorVelocity}
+\end{figure}
+
+
+%% neutralWindPlant250sVelPlan %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/neutralWindPlant250sVelPlan}
+\caption{INSERT_CAPTION}
+\label{fig:neutralWindPlant250sVelPlan}
+\end{figure}
+
+
+%% neutralWindPlantActuatorMeshRefinement %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/neutralWindPlantActuatorMeshRefinement}
+\caption{INSERT_CAPTION}
+\label{fig:neutralWindPlantActuatorMeshRefinement}
+\end{figure}
+
+
+%% neutralWindPlantAvgVelocityProfile %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/neutralWindPlantAvgVelocityProfile}
+\caption{INSERT_CAPTION}
+\label{fig:neutralWindPlantAvgVelocityProfile}
+\end{figure}
+
+
+%% neutralWindPlantAvgVelPlanMeshRefine %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/neutralWindPlantAvgVelPlanMeshRefine}
+\caption{INSERT_CAPTION}
+\label{fig:neutralWindPlantAvgVelPlanMeshRefine}
+\end{figure}
+
+
+%% neutralWindPlantAvgVelPlan %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/neutralWindPlantAvgVelPlan}
+\caption{INSERT_CAPTION}
+\label{fig:neutralWindPlantAvgVelPlan}
+\end{figure}
+
+
+%% neutralWindPlantVelocityProfile %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/neutralWindPlantVelocityProfile}
+\caption{INSERT_CAPTION}
+\label{fig:neutralWindPlantVelocityProfile}
+\end{figure}
+
+
+%% ocean-side-profile1 %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/ocean-side-profile1}
+\caption{INSERT_CAPTION}
+\label{fig:ocean-side-profile1}
+\end{figure}
+
+
+%% ocean-side-profile2 %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/ocean-side-profile2}
+\caption{INSERT_CAPTION}
+\label{fig:ocean-side-profile2}
+\end{figure}
+
+
+%% ocean-side-profile3 %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/ocean-side-profile3}
+\caption{INSERT_CAPTION}
+\label{fig:ocean-side-profile3}
+\end{figure}
+
+
+%% ocean-vertical-speed-profile %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/ocean-vertical-speed-profile}
+\caption{INSERT_CAPTION}
+\label{fig:ocean-vertical-speed-profile}
+\end{figure}
+
+
