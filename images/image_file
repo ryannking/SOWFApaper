@@ -30,12 +30,12 @@
 \label{fig:unstableWindPlantAvgVelPlan}
 \end{figure}
 
-%% unstablelABLPrecursorVelocity %%
+%% unstableABLvelProfile %%
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{images/unstableABLvelProfile}
 \caption{INSERT_CAPTION}
-\label{fig:unstableABLPrecursorVelocity}
+\label{fig:unstableABLvelProfile}
 \end{figure}
 
 %% unstableABLPrecursorTemp %%

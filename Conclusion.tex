@@ -1,9 +1,5 @@
 \section{Conclusion and Future Work}
 This study replicated existing work on LES simulations of wind turbines, and confirmed many previous findings.  Specifically, our ABL simulations showed the wakes dissipating sooner in the unstable case, which fits with other published findings.  We also replicated anomalous results due to grid refinement that was originally observed by the creators of the SOWFA toolset.  We have extended the SOWFA toolset to ocean boundary layers and demonstrated much greater periodic motion of the wake in the vertical direction.  Our ocean simulation also shows that the artifacts disappear when grid resolution step changes are removed.
-Future work ideas
-Aeroelastic modelling (FAST)
-Arrays of WTG?s
-Applications to control schemes, forecasting, array optimization
 
 There is a clear need for future work on LES modeling of wind turbines, and we believe there are many opportunities to improve the numerical methods deployed in SOWFA.  With the simplicity of the domain, the tendency towards smooth functions and the periodic boundary condition, spectral methods and wavelet decompositions would likely result in a substantial performance gain. Additionally, our simulations used the backward Euler method for time steps, where a performance would likely be gained in using the Crank Nicholson or Runge Kutta methods.
 

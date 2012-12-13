@@ -1,0 +1,17 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: SOWFApaper.aux
+The style file: alpha.bst
+Database file #1: ref.bib
+Warning--entry type for "OpenFOAM" isn't style-file defined
+--line 183 of file ref.bib
+Warning--entry type for "SOWFA" isn't style-file defined
+--line 190 of file ref.bib
+Warning--entry type for "Voith" isn't style-file defined
+--line 197 of file ref.bib
+Warning--to sort, need author or key in SOWFA
+Warning--to sort, need author or key in OpenFOAM
+Warning--to sort, need author or key in Voith
+Warning--empty booktitle in churchfield_large-eddy_2012
+Warning--empty institution in jonkman_definition_2009
+Warning--empty booktitle in kelley_impact_2005
+Warning--empty booktitle in lee_atmospheric_2011
+(There were 10 warnings)

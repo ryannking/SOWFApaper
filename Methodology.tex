@@ -16,7 +16,7 @@ and the filtered momentum equation,
 \begin{equation}
    \label{filtered_momentum}
    \frac{\partial \ubar_i}{\partial t} + \frac{\partial}{\partial x_j}\left(\ubar_j \ubar_i \right)
-   = -2\varepsilon_{ijk}\Omega_{j} \ubar_k -\frac{\partial \tilde{p}}{\partial x_i} - \frac{\partial \tau^D_{ij}}{\partial x_j} + F^T_i + F^A_i,
+   = -2\varepsilon_{ijk}\Omega_{j} \ubar_k -\frac{\partial \tilde{p}}{\partial x_i} - \frac{\partial \tau^D_{ij}}{\partial x_j} + F^T_i
 \end{equation}
 
 where
@@ -59,35 +59,33 @@ Because of the sharp velocity gradients, complex surface roughness effects, and 
 
 \begin{equation}
    \label{wall model}
-   \tau^D_{ij}=\begin{bmatrix} 0 & 0 & \tau^tot_{13} \\ 0 & 0 & \tau^tot_{23} \\ \tau^tot_{13} & \tau^tot_{23} &0 \end{bmatrix}
+   \tau^D_{ij}=\begin{bmatrix} 0 & 0 & \tau^{tot}_{13} \\ 0 & 0 & \tau^{tot}_{23} \\ \tau^{tot}_{13} & \tau^{tot}_{23} &0 \end{bmatrix}
 \end{equation}
-
+Where $\tau^{tot}_{13}$ and $ \tau^{tot}_{23}$ are defined as
 \begin{equation}
    \label{tau13}
-   \tau^tot_{13}=
--u^2_\ast\frac{S_{1/2}\langle \ubar_{1/2}\rangle+\langleS_{1/2}\rangle\left( \ubar_{1/2}-\langle\ubar_{1/2}\rangle\right) }
-{\langleS_{1/2}\rangle\left( \langle\ubar_{1/2}\rangle^2+\langle \vbar_{1/2}rangle^2\right)^{1/2} }
+   \tau^{tot}_{13}=
+-u^2_*\frac{S_{1/2}\langle \ubar_{1/2}\rangle+\langle S_{1/2}\rangle\left( \ubar_{1/2}-\langle\ubar_{1/2}\rangle\right) }
+{\langle S_{1/2}\rangle\left( \langle\ubar_{1/2}\rangle^2+\langle \vbar_{1/2}\rangle^2\right)^{1/2} }
 \end{equation}
 
 \begin{equation}
    \label{tau23}
-   \tau^tot_{23}=
-   -u^2_\ast\frac{S_{1/2}\langle \vbar_{1/2}\rangle+\langleS_{1/2}\rangle\left( \vbar_{1/2}-\langle\vbar_{1/2}\rangle\right) }
-   {\langleS_{1/2}\rangle\left( \langle\ubar_{1/2}\rangle^2+\langle \vbar_{1/2}rangle^2\right)^{1/2} }
+   \tau^{tot}_{23}=
+   -u^2_*\frac{S_{1/2}\langle \vbar_{1/2}\rangle+\langle S_{1/2}\rangle\left( \vbar_{1/2}-\langle\vbar_{1/2}\rangle\right) }
+   {\langle S_{1/2}\rangle\left( \langle\ubar_{1/2}\rangle^2+\langle \vbar_{1/2}\rangle^2\right)^{1/2} }
 \end{equation}
-
-\begin{equation}
-   \label{friction velocity}
-   \u^2_\ast=\left( \langle\tau^tot_{13}\rangle^2+\langle \tau^tot_{23}\rangle^2\right)^{1/2}  
-\end{equation}
-
-Where $\u^2_\ast$ is the friction velocity, which can be calculated from the Obukhov length and aerodynamic roughness length.
+Where $u^2_*$ is the friction velocity, which can be calculated from the Obukhov length and aerodynamic roughness length.
+%\begin{equation}
+%   \label{friction velocity}
+%   u^2_*=\left( \langle \tau^tot_{13}\rangle^2+\langle \tau^tot_{23}\rangle^2\right)^{1/2}  
+%\end{equation}
 
 \subsubsection{Turbine Properties}
 
 The turbines modeled in our two simulation were not modeled as physical blades to which the fluid provided with rotational energy -- the computation power and modeling difficulty of such blades are beyond the scope of this paper. Instead, the turbines were modeled as a set of actuator lines which impose body forces on the incoming fluid flow. This model is described by Sorensen and Shen \cite{sorensen:393} and implimented in SOWFA \cite{SOWFA}.
 
-For the onshore wind turbine simulations we used the "NREL Offshore 5-MW Baseline Wind Turbine\cite{jonkman_definition_2009}, which is a representative utility scale multimegawatt wind turbine developed at NREL's National Wind Technology Center.  It is based on the REpower 5M wind turbine, with additional data from other publicly available sources so that the structural, aerodynamic, material, and control system properties are representative of a modern day wind turbine.  The wind turbine is three-bladed, upwind, variable speed, pitch controlled turbine with a 126 m rotor diameter, 90 m hub height, and high speed multi-stage gearbox.  Rated power for the turbine is 5.0 MW at 12.1 rpm.  Mass, stiffness, damping, and airfoil properties are given in NREL documentation \cite{jonkman_definition_2009}.
+For the onshore wind turbine simulations we used the NREL Offshore 5-MW Baseline Wind Turbine \cite{jonkman_definition_2009}, which is a representative utility scale multimegawatt wind turbine developed at NREL's National Wind Technology Center.  It is based on the REpower 5M wind turbine, with additional data from other publicly available sources so that the structural, aerodynamic, material, and control system properties are representative of a modern day wind turbine.  The wind turbine is three-bladed, upwind, variable speed, pitch controlled turbine with a 126 m rotor diameter, 90 m hub height, and high speed multi-stage gearbox.  Rated power for the turbine is 5.0 MW at 12.1 rpm.  Mass, stiffness, damping, and airfoil properties are given in NREL documentation \cite{jonkman_definition_2009}.
 
 For the ocean current turbine simulation, a 1MW turbine was modeled (hereafter refered to as the OT1MW), with specs based upon the Voith 1 MW \cite{Voith}. The OT1MW was modeled with a 8 meter blade radius and 1.5m hub. The airfoils used on the OT1MW were a scaled down version of the airfoils used on the NREL5MW turbine as found in the SOWFA package \cite{SOWFA}, which is a poor approximation to the Voith 1MW turbine; future work will include a better representation of the 1MW turbine blade and generator properties. The OT1MW produced as expected, with the turbine reaching a steady state production of 0.85MW and steady rotation rate of 8 RPM at hub-height channel velocity of 1.9 m/s.
 
@@ -98,7 +96,7 @@ For the ocean current turbine simulation, a 1MW turbine was modeled (hereafter r
 
 The numerical package used in the simulations was OpenFOAM (Open Source Field Operation and Manipulation), which is a collection of C++ libraries for solving PDE's on unstructured meshes using the finite volume method \cite{OpenFOAM}. OpenFOAM is increasingly becoming the CFD package of choice for wind turbine simulations thanks to it's open source and adaptable nature that has led to work done at the National Wind Technology Center, the University of Massachusetts Amherst and elsewhere.
 
-We employ the ABLPisoSolver developed as part of the NREL SOWFA (Simulator for Offshore Wind Farm Applications) toolset \cite{SOWFA} to solve our flow simulations.  ABLPisoSolver is based on the standard PISO algorithm that solves the momentum and pressure equations implicitly, but with the buoyancy, SFS stress, and (Coriolis, temperature, need to check the actual code on these as pdfs from Matt disagree) terms treated explicitly.  These explicit terms are solved sequentially using a Predictor-Corrector approach based on the previous timestep.  
+We employ the ABLPisoSolver developed as part of the NREL SOWFA (Simulator for Offshore Wind Farm Applications) toolset \cite{SOWFA} to solve our flow simulations.  ABLPisoSolver is based on the standard PISO algorithm that solves the momentum and pressure equations implicitly, but with the buoyancy, SFS stress, and Coriolis terms treated explicitly.  These explicit terms are solved sequentially using a Predictor-Corrector approach based on the previous timestep.  
 
 \subsection{Simulation}
 
