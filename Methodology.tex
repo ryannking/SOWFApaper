@@ -4,18 +4,51 @@
 
 
 \subsubsection{LES}
-In this study, we employ a Large Eddy Simulation (LES) to model the fluid flow in the atmospheric and ocean boundary layers.  In an LES simulation a low pass spatial filter is applied to the incompressible Navier-Stokes equations so that the scales of turbulence responsible for transport and production of turbulent kinetic energy (TKE) are directly resolved, but smaller scales where viscous dissipation takes place are parameterized in a subfilter scale model (SFS).  The governing equations for our simulation include the Boussinesq approximation for buoyancy effects, Coriolis forces for a latitude of 45 deg north, and density-normalized forces representing our turbine actuator model.  The governing equations are as follows
+In this study, we employ a Large Eddy Simulation (LES) to model the fluid flow in the atmospheric and ocean boundary layers.  In an LES simulation a low pass spatial filter is applied to the incompressible Navier-Stokes equations so that the scales of turbulence responsible for transport and production of turbulent kinetic energy (TKE) are directly resolved, but smaller scales where viscous dissipation takes place are parameterized in a subfilter scale model (SFS).  The governing equations for our simulation include the Boussinesq approximation for buoyancy effects, Coriolis forces for a latitude of 45 deg north, and density-normalized forces representing our turbine actuator model.  The governing equations by the filtered continuity equation,
 
+\begin{equation}
+   \label{filtered_continuity}
+   \frac{\partial \ubar_j}{\partial x_j} = 0,
+\end{equation}
+
+and the filtered momentum equation,
+
+\begin{equation}
+   \label{filtered_momentum}
+   \frac{\partial \ubar_i}{\partial t} + \frac{\partial}{\partial x_j}\left(\ubar_j \ubar_i \right)
+   = - \frac{\partial \tilde{p}}{\partial x_i} - \frac{\partial \tau^D_{ij}}{\partial x_j} + F^T_i + F^A_i,
+\end{equation}
+
+where
+
+\begin{equation}
+   \label{eq:modified_pressure}
+   \tilde{p} = \frac{\pbar + \tau_{kk}}{3 \rho}.
+\end{equation}
 %%%%!!
 % insert filtered continuity, momentum, and potential temp transport, boussinesq approximation, and coriolis force equations here
 %%%%!!
 
-The SFS model used to parameterize viscous effects and is the standard Smagorinsky model.  This SFS model accounts for shear stress everywhere except at the lower boundary where a wall model is used.  The SFS model is applied at cell faces, which avoids interpolating to cell faces while taking the divergence of stress but provides a less dissipative effect near the lower boundary surface.  
+The SFS model used to parameterize viscous effects and is the standard Smagorinsky model.  This SFS model accounts for shear stress everywhere except at the lower boundary where a wall model is used.  The SFS model is applied at cell faces, which avoids interpolating to cell faces while taking the divergence of stress but provides a less dissipative effect near the lower boundary surface.  To model this, the shear stress equation is set to
 
-%%%%!!
-% insert Smagorinsky equations
-%%%%!!
+\begin{equation}
+   \label{eq:smagorinsky}
+   \tau^D_{ij} = -2 \nu^{SFS} \bar{S}_{ij},
+\end{equation}
 
+where
+
+\begin{equation}
+   \bar{S}_{ij} = \frac{1}{2} \left( \frac{\partial \ubar_i}{\partial x_j} + \frac{\partial \ubar_j}{\partial x_i} \right).
+\end{equation}
+
+The smagorinsky model defines $\nu$ as
+
+\begin{equation}
+   \nu^{SFS} = (C_s \Delta)^2(2\bar{S}_{ij}\bar{S}_{ij})^{1/2}
+\end{equation}
+
+where $C_s$ is the model constant set to 0.125 (check this for wind) and $\Delta$ is the filter length scale, which for SOWFA is set as $(\Delta x \Delta y \Delta z)^{1/3}$
 Spatial filter
 Boussinesq approximation
 
