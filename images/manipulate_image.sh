@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for file in `ls *.png`
+for file in `ls unstable*.png`
 do
    newname=`echo $file | sed 's/\.png$//g'`
 

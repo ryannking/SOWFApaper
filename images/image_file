@@ -124,3 +124,57 @@
 \end{figure}
 
 
+%% unstableABLTempProfile %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/unstableABLTempProfile}
+\caption{INSERT_CAPTION}
+\label{fig:unstableABLTempProfile}
+\end{figure}
+
+
+%% unstableABLvelProfile %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/unstableABLvelProfile}
+\caption{INSERT_CAPTION}
+\label{fig:unstableABLvelProfile}
+\end{figure}
+
+
+%% unstableWindPlantAvgVelPlan %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/unstableWindPlantAvgVelPlan}
+\caption{INSERT_CAPTION}
+\label{fig:unstableWindPlantAvgVelPlan}
+\end{figure}
+
+
+%% unstableWindPlantAvgVelProfile %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/unstableWindPlantAvgVelProfile}
+\caption{INSERT_CAPTION}
+\label{fig:unstableWindPlantAvgVelProfile}
+\end{figure}
+
+
+%% unstableWindPlantVelPlan %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/unstableWindPlantVelPlan}
+\caption{INSERT_CAPTION}
+\label{fig:unstableWindPlantVelPlan}
+\end{figure}
+
+
+%% unstableWindPlantVelProfile %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/unstableWindPlantVelProfile}
+\caption{INSERT_CAPTION}
+\label{fig:unstableWindPlantVelProfile}
+\end{figure}
+
+
