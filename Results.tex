@@ -1,7 +1,7 @@
 \section{Results}
 
 \subsection{Precursor Results}
-After 12000 seconds of simulation time, the ABL precursor simulation showed fully developed atmospheric boundary layers.  The temperature profile of the precursor ABL simulation shows the capping inversion that limits boundary layer growth and vertical motion above 750 m.  Figures~\ref{fig:neutralABLPrecursorVelocity}  show the fully developed flow fields for neutral and unstable ABL's after they've been allowed to spin up for 12000 seconds.  
+After 12000 seconds of simulation time, the ABL precursor simulation showed fully developed atmospheric boundary layers.  This was ample time to develop the realistic coherent turbulent structures that are crucial to generating realistic loading conditions.  The temperature profile of the precursor ABL simulation shows the capping inversion that limits boundary layer growth and vertical motion above 750 m.  Figures~\ref{fig:neutralABLPrecursorVelocity} and ~\ref{fig:unstableABLPrecursorVelocity} show the fully developed flow fields for neutral and unstable ABL's after they've been allowed to spin up for 12000 seconds.  As expected, the unstable case shows greater mixing in the boundary layer, while the stable case shows more horizontal velocity shear.
 
 %% neutralABLPrecursorVelocity %%
 \begin{figure}
@@ -9,6 +9,14 @@ After 12000 seconds of simulation time, the ABL precursor simulation showed full
 \includegraphics[width=\textwidth]{images/neutralABLPrecursorVelocity}
 \caption{Precursor flow for the neutral ABL case}
 \label{fig:neutralABLPrecursorVelocity}
+\end{figure}
+
+%% unstableABLPrecursorVelocity %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{imagesunstableABLPrecursorVelocity}
+\caption{Precursor flow for the unstable ABL case}
+\label{fig:unstableABLPrecursorVelocity}
 \end{figure}
 
 The OBL Precursor was run to 6000 seconds, which represents seven large-eddy turnovers \cite{churchfield_large-eddy_2012}. At this point, the pressure gradient drove our velocity at 35 meters to 1.9 m/s and 2.2 m/s. The vertical velocity profile for the flow is shown in Figure~\ref{fig:ocean-vertical-speed-profile}.
@@ -21,10 +29,40 @@ The OBL Precursor was run to 6000 seconds, which represents seven large-eddy tur
 \label{fig:ocean-vertical-speed-profile}
 \end{figure}
 
-The precursor simulations show realistic coherent turbulent structures that are crucial in generating realistic load distributions.  The different stability cases also exhibit realistic vertical mixing and shear profiles, with the unstable case showing a better mixed boundary layer.
-
 \subsection{Actuator Line Results}
-After fully developing the atmospheric boundary layer in the absence of wind turbines, we insert a single actuator line turbine and run the simulation for another 250 seconds.  The results lead to several interesting insights.  First, there is nontrivial flow leakage at the root of the blades that persists for about two rotor diameters downstream.  This region where the blade airfoil properties are still discernible is the "near-wake" region\cite{sanderse_review_2011}.  Further downstream in the "far-wake" region the blade-specific effects have diffused into an amorphous wake, but the velocity deficit that is characteristic of the far-wake is present for eight to ten rotor diameters.  Figures XX show average velocity profiles and Figures XX show instantaneous velocity profiles at 250 seconds.  The instantaneous velocities also show horizontal and vertical meandering of the wake that is likely caused by instabilities in the boundary layer.
+After fully developing the atmospheric boundary layer in the absence of wind turbines, we insert a single actuator line turbine and run the simulation for another 250 seconds.  The results lead to several interesting insights.  First, there is nontrivial flow leakage at the root of the blades that persists for about two rotor diameters downstream.  This region where the blade airfoil properties are still discernible is the "near-wake" region \cite{sanderse_review_2011}.  Further downstream in the "far-wake" region the blade-specific effects have diffused into an amorphous wake, but the velocity deficit that is characteristic of the far-wake is present for eight to ten rotor diameters.  Figures~\ref{fig:neutralWindPlantAvgVelPlan} and ~\ref{fig:unstableWindPlantAvgVelPlan} show average velocity profiles at hub height and Figures~\ref{fig:neutralWindPlant250sVelPlan} and~\ref{fig:unstableWindPlantVelPlan} show instantaneous velocity profiles after 250 seconds.  The instantaneous ABL wake deficits show some wander, but significantly less than will be seen in the ocean turbine wake.
+
+%% neutralWindPlantAvgVelPlan %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/neutralWindPlantAvgVelPlan}
+\caption{Average hub-height velocity over 250 seconds for the neutral ABL}
+\label{fig:neutralWindPlantAvgVelPlan}
+\end{figure}
+
+%% unstableWindPlantAvgVelPlan %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/unstableWindPlantAvgVelPlan}
+\caption{Average hub-height velocity over 250 seconds for the unstable ABL}
+\label{fig:unstableWindPlantAvgVelPlan}
+\end{figure}
+
+%% neutralWindPlant250sVelPlan %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/neutralWindPlant250sVelPlan}
+\caption{Instantaneous hub-height velocity after 250 seconds for the neutral ABL}
+\label{fig:neutralWindPlant250sVelPlan}
+\end{figure}
+
+%% unstableWindPlantVelPlan %%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{images/unstableWindPlantVelPlan}
+\caption{Instantaneous hub-height velocity after 250 seconds for the unstable ABL}
+\label{fig:unstableWindPlantVelPlan}
+\end{figure}
 
 \subsubsection{Numerical Artifacts}
 Interestingly, we also observe numerical artifacts in the CFD results located at the transition between grid refinement regions.  Figure~\ref{fig:neutralWindPlantAvgVelPlanMeshRefine} shows the average velocity at hub height for the unstable ABL with the actual grid cells overlaid on the flow field.  Clearly, the artifacts are generated at the abrupt transition between adjacent refinement levels.   Confirming these results, the ocean turbine simulation, where the grid refinement was constant across the entire domain, did not show any signs of artifacts -- this is shown in Figure~\ref{fig:OceanMeshRefinement}. However, a single grid refinement level is not the ideal solution -- conversations with the SOWFA creators, Matt Churchfield and Sang Lee, suggest that a spatial filter or mesh smoothing function could help alleviate these anomalies.
@@ -49,7 +87,9 @@ Interestingly, we also observe numerical artifacts in the CFD results located at
 
 \subsubsection{Vertical wake oscillation}
 
-One very notable feature of the ocean current turbine flow was the extent to which vertical flow oscillation dominated the velocity profile. Figure~\ref{fig:ocean-side-profile} shows the movement of the vertical oscillation, with three snapshots from 100, 200 and 300 seconds. While vertical oscillations were certainly noted in the wind energy simulation, the extent of the ocean turbine oscillatiosn is comparatively much greater, with the peaks of the oscillation covering most all of the 70 meter vertical domain.
+One very notable feature of the ocean current turbine flow was the extent to which vertical flow oscillation dominated the velocity profile. Figure~\ref{fig:ocean-side-profile} shows the movement of the vertical oscillation, with three snapshots from 100, 200 and 300 seconds. While vertical oscillations were certainly noted in the wind energy simulation, the extent of the ocean turbine oscillation is comparatively much greater, with the peaks of the oscillation covering most all of the 70 meter vertical domain.
+
+% did you still have a capping temperature inversion in the ocean simulation?  Should we postulate about the reynolds number of the flow?  Qualitatively, it looks like the ocean simulation is much more turbulent/unstable than the ABL.  Alternatively, your horizontal velocity was way lower than mine and it looks like at times the vertical velocity was greater than the horizontal (or fig 2 is mislabeled?) Maybe we didn't drive the ocean simulation hard enough? %
 
 %% ocean-side-profile1 %%
 \begin{figure}
