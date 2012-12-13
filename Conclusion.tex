@@ -5,10 +5,8 @@ Higher resolution
 Aeroelastic modelling (FAST)
 Arrays of WTG?s
 Applications to control schemes, forecasting, array optimization
-Wavelets
-Spectral methods
-Instable and stable cases in ocean
-More accurate ocean turbine model
+
+This work used standard numerical methods typical to CFD simulations, but opportunities exist to study the performance of other numerical methods. With the simplicity of the domain, the tendancy towards smooth functions and the periodic boundary condition, spectral methods and wavelet decompositions would likely result in a substantial performance gain. Additionally, our simulations used the backward Euler method for time steps, where a performance would likely be gained in using the Crank Nicholson or Runge Kutta methods.
 
 Future work on this project related to ocean turbine modeling includes several possibilities. For one, the grid size used in the initial model was very coarse, with a grid cell size of 2m$^3$ in the precursor stage and 0.2m$^3$ in the turbine modeling stage. A more accurate representation of the precursor flow could be obtained by doubling or tripping the resolution. Second, work remains on better modeling the various tidal turbines currently being proposed by the private sector; the model used in this paper was adapted from a wind turbine design. And finally, work remains in modeling various ocean states, such as stable, unstable, high wind shear/turbulence, etc.
 
