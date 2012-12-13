@@ -1,6 +1,3 @@
-# Recreate using the following command:
-# cat ref.bib | grep ^@ > current_references
-
 @inproceedings{churchfield_large-eddy_2012,
 @article{moeng_large-eddy-simulation_1984,
 @article{churchfield_numerical_2012,
@@ -16,3 +13,6 @@
 @article{sanderse_review_2011,
 @article{wu_simulation_????,
 @inproceedings{churchfield_wind_2010,
+@online{OpenFOAM,
+@online{SOWFA,
+@online{Voith,

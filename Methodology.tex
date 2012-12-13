@@ -36,7 +36,7 @@ Airfoil lookup tables
 \subsection{Numerics}
 
 
-The numerical package used in the simulations was OpenFOAM (Open Source Field Operation and Manipulation), which is a collection of C++ libraries for solving PDE?s on unstructured meshes using the finite volume method \cite{OpenFoam}. OpenFOAM is increasingly becoming the CFD package of choice for wind turbine simulations thanks to it?s open source and adaptable nature that has led to work done at the National Wind Technology Center and the University of Massachusetts Amherst \cite{churchfield_wind_2010}.  
+The numerical package used in the simulations was OpenFOAM (Open Source Field Operation and Manipulation), which is a collection of C++ libraries for solving PDE?s on unstructured meshes using the finite volume method \cite{OpenFOAM}. OpenFOAM is increasingly becoming the CFD package of choice for wind turbine simulations thanks to it?s open source and adaptable nature that has led to work done at the National Wind Technology Center and the University of Massachusetts Amherst \cite{churchfield_wind_2010}.  
 
 We employ the ABLPisoSolver developed as part of the NREL SOWFA (Simulator for Offshore Wind Farm Applications) toolset (cite Matt and Sang) to solve our flow simulations.  ABLPisoSolver is based on the standard PISO algorithm that solves the momentum and pressure equations implicitly, but with the buoyancy, SFS stress, and (Coriolis, temperature, need to check the actual code on these as pdfs from Matt disagree) terms treated explicitly.  These explicit terms are solved sequentially using a Predictor-Corrector approach based on the previous timestep.  
 
